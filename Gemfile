@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
+# Ordrin rails gem to simplify API calls 
+gem 'ordrin'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
