@@ -1,0 +1,43 @@
+<div class="menu">
+
+<p>Restaurant details</p>
+
+<p>
+  <%= @details['name'] %>
+  <br><%= @details['addr'] %>
+  <br><%= @details['cs_contact_phone'] %>
+</p>
+
+<!-- <p>Menu</p>
+
+<% idx = 0 %>
+<% while idx < @details['menu'].count %>
+
+<p>
+<% counter = 0 %>
+<% while counter< @details['menu'][idx]['children'].size %>
+  <br><%= @details['menu'][idx]['children'][counter]['name'] %> 
+  $<%= @details['menu'][idx]['children'][counter]['price'] %>
+  <br><%= @details['menu'][idx]['children'][counter]['descrip'] %>
+<% counter += 1 %>
+<% end %>
+</p>
+
+<% idx += 1 %>
+<% end %> -->
+<script>
+
+$.getJSON( "/guest/menu/24690", function( data ) {
+  var items = [];
+  $.each( data, function( key, val ) {
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+});
+</script>
+
+</div>

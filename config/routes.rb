@@ -4,12 +4,17 @@ Wingbutton::Application.routes.draw do
   resources :addresses
   resources :orders
 
+  root 'welcome#index'
+
+  #login / session routes
   get "/login", to: "session#new"
   post "/session", to: "session#create"
   delete "/session", to: "session#destroy"
-  get '/show', to: 'welcome#show'
-  get '/wings/:id', to: 'welcome#wings'
-  get '/details/:id', to: 'welcome#details'
 
-  root 'welcome#index'
+  #guest routes
+  get 'guest/wings/:id', to: 'guest#wings'
+  get 'guest/menu/:id', to: 'guest#menu'
+  get 'guest/confirmation/:id', to: 'guest#confirmation'
+
+  
 end

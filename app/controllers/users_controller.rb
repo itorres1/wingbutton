@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include OrdrinHelper
 
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate, :authorize, only: [:edit, :update]
