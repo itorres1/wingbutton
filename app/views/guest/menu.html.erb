@@ -1,16 +1,15 @@
-<div class="menu">
 
-<p>Restaurant details</p>
+  <div id="restaurant-info">
+    <p>
+      <%= @details['name'] %>
+      <br><%= @details['addr'] %>
+      <br><%= @details['cs_contact_phone'] %>
+    </p>
+  </div>
 
-<p>
-  <%= @details['name'] %>
-  <br><%= @details['addr'] %>
-  <br><%= @details['cs_contact_phone'] %>
-</p>
-
-<script>
+  <script>
   WingButton.currentMenuURL = "/guest/menu/<%=@details['restaurant_id']%>";
-</script>
+  </script>
 
-</div>
+
 
