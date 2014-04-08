@@ -1,9 +1,11 @@
 //WingButton.fullMenu;
 WingButton.wingMenu = [];
 WingButton.wings = [];
+WingButton.wingOrders = [];
 
+// recursive function adds items to wingMenu list if it's a wing item
 function recursiveAddMenuItems(item) {
-  if ((item.is_orderable == 1) && (item.name.match(/wing/i))) {
+  if ((item.is_orderable === 1) && (item.name.match(/wing/i))) {
     WingButton.wingMenu.push(item);
   }
   if (item.children) {
@@ -17,14 +19,15 @@ function recursiveAddMenuItems(item) {
   }
 }
 
+//gets restaurant items from api
 $.getJSON(WingButton.currentMenuURL, function( data ) {
   WingButton.fullMenu = data.menu;
   recursiveAddMenuItems(data.menu);
 
   WingButton.wingMenu.forEach(function(item){
-    //WingButton.wingOrders.push(new MenuItem(item.id));
-    //WingButton.wingOrders[WingButton.wingOrders.length-1].render();
+    WingButton.wings.push(new MenuItem(item.id, item.name, item.price ));
   });
+  WingButton.wings[WingButton.wings.length-1].render()
   //item.name  => item's or category's name
   //item.price => 0.00 if a category or the item's price
   //item.is_orderable => 1 if an item, 0 if not...
@@ -33,18 +36,26 @@ $.getJSON(WingButton.currentMenuURL, function( data ) {
   //quantity
 });
 
-
-function MenuItem(itemID, quantity, optionId, itemName, price){
+// define constructor for menu items
+function MenuItem(itemID, itemName, itemPrice){
   this.itemID = itemID;
-  this.quantity = quantity;
-  this.optionID = optionID;
   this.itemName = itemName;
-  this.price = price;
+  this.itemPrice = itemPrice;
 }
 
 MenuItem.prototype.render = function(){
   //render a menuitem
   //<li class="wing" data-id="..."><span class="name">Hot Wing</span>...</li>
+  var menuSection = $('<div>');
+  menuSection.attr('class', "menu-section");
+  var article = $('<article>');
+  var name = $('<h2>' + this.itemName + '</h2>')
+  var price = $('<h3>' + "$" + this.itemPrice + '</h3>')
+  article.append(name);
+  article.append(price);
+  menuSection.append(article);
+
+  $('body').append(menuSection);
 }
 
 MenuItem.prototype.updateQuantity = function(quantity){

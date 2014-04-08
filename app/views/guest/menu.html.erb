@@ -8,30 +8,9 @@
   <br><%= @details['cs_contact_phone'] %>
 </p>
 
-<!-- <p>Menu</p>
-
-<% idx = 0 %>
-<% while idx < @details['menu'].count %>
-
-<p>
-<% counter = 0 %>
-<% while counter< @details['menu'][idx]['children'].size %>
-  <br><%= @details['menu'][idx]['children'][counter]['name'] %> 
-  $<%= @details['menu'][idx]['children'][counter]['price'] %>
-  <br><%= @details['menu'][idx]['children'][counter]['descrip'] %>
-<% counter += 1 %>
-<% end %>
-</p>
-
-<% idx += 1 %>
-<% end %> -->
-
-
 <script>
   WingButton.currentMenuURL = "/guest/menu/<%=@details['restaurant_id']%>";
 </script>
 
 </div>
 
-
-<!-- The tray is composed of menu items and optional sub-items. A single menu item's format is: [menu item id]/[qty],[option id],[option id]... Multiple menu items are joined by a +: [menu item id]/[qty]+[menu item id2]/[qty2] For example: 3270/2+3263/1,3279 Means 2 of menu item 3270 (with no sub options) and 1 of item num 3263 with sub option 3279. -->
