@@ -14,7 +14,8 @@ Wingbutton::Application.routes.draw do
   #guest routes
   get 'guest/wings/:id', to: 'guest#wings'
   get 'guest/menu/:id', to: 'guest#menu'
-  get 'guest/confirmation/:id', to: 'guest#confirmation'
+  get 'guest/confirmation', to: 'guest#confirmation'
+  get 'guest/order', to: 'guest#order'
 
   
 end

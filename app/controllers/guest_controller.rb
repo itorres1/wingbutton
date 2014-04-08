@@ -19,4 +19,7 @@ class GuestController < ApplicationController
   def confirmation
   end
 
+  def order
+  end
+
 end

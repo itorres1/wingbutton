@@ -25,19 +25,13 @@
 
 <% idx += 1 %>
 <% end %> -->
-<script>
 
-$.getJSON( "/guest/menu/24690", function( data ) {
-  var items = [];
-  $.each( data, function( key, val ) {
-    items.push( "<li id='" + key + "'>" + val + "</li>" );
-  });
- 
-  $( "<ul/>", {
-    "class": "my-new-list",
-    html: items.join( "" )
-  }).appendTo( "body" );
-});
+
+<script>
+  WingButton.currentMenuURL = "/guest/menu/<%=@details['restaurant_id']%>";
 </script>
 
 </div>
+
+
+<!-- The tray is composed of menu items and optional sub-items. A single menu item's format is: [menu item id]/[qty],[option id],[option id]... Multiple menu items are joined by a +: [menu item id]/[qty]+[menu item id2]/[qty2] For example: 3270/2+3263/1,3279 Means 2 of menu item 3270 (with no sub options) and 1 of item num 3263 with sub option 3279. -->

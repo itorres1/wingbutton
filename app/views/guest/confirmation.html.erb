@@ -1,0 +1,72 @@
+<form action="/guest/order" method="POST">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <label>
+    First name:
+    <input type="string" name="first_name" />
+  </label>
+  <label>
+    Last name
+    <input type="string" name="last_name" />
+  </label>
+  <label>
+    Address:
+    <input type="string" name="addr" />
+  </label>
+  <label>
+    City:
+    <input type="string" name="city" />
+  </label>
+  <label>
+    State:
+    <input type="string" name="state" />
+  </label>
+  <label>
+    Zip:
+    <input type="string" name="zip" />
+  </label>
+  <label>
+    Phone:
+    <input type="string" name="phone" />
+  </label>
+  <label>
+    Email:
+    <input type="string" name="em" />
+  </label>
+  <label>
+    Full name on credit card:
+    <input type="string" name="card_name" />
+  </label>
+  <label>
+    Card number:
+    <input type="string" name="card_number" />
+  </label>
+  <label>
+    Card cvc
+    <input type="string" name="card_cvc" />
+  </label>
+  <label>
+    Card expiration date:
+    <input type="string" name="card_expiry" />
+  </label>
+  <label>
+    Billing address:
+    <input type="string" name="card_bill_addr" />
+  </label>
+  <label>
+    City:
+    <input type="string" name="card_bill_city" />
+  </label>
+  <label>
+    State:
+    <input type="string" name="card_bill_state" />
+  </label>
+  <label>
+    Zip:
+    <input type="string" name="card_bill_zip" />
+  </label>
+  <label>
+    Phone:
+    <input type="string" name="card_bill_phone" />
+  </label>
+  <input class="form_button" type="submit" value="Enter" />
+</form>
