@@ -16,10 +16,9 @@ class GuestController < ApplicationController
     end
   end
 
-  def confirmation
-  end
-
   def order
+    @order = Order.create(order_string: params[:orderString])
+    render :order
   end
 
 end

@@ -32,10 +32,11 @@ $.getJSON(WingButton.currentMenuURL, function( data ) {
 //render function is recursive so it renders meal options
 var renderMenuItem = function(item){
   var menuSection = $('<div>');
+
   var article = $('<article>');
   var name = $('<span>' + item.name + '</span>');
   if(item.price != '0.00'){
-    var price = $('<b>' + "$" + item.price + '</b>')
+    var price = $('<b> ' + "$" + item.price + '</b>')
     menuSection.attr('class', "menu-item" );
     var input = $('<input type="text" class="item-quantity-input" id="'+item.id+'">')
   }else{
@@ -49,14 +50,58 @@ var renderMenuItem = function(item){
   menuSection.append(article);
   $('#all-content').append(menuSection);
   $('#'+item.id+'').keyup(function() {
-      WingButton.wingTray[item.id] = this.value;
-      renderTray();
-    });
+    WingButton.wingTray[item.id] = this.value;
+    renderTray();
+  });
+};
+
+var createOrderString = function(){
+  var result = "";
+  $.each(WingButton.wingTray, function(index, value){
+    if(value > 0){
+      result = result + index + "/" + value + "+";
+    }
+  });
+  result = result.substring(0, result.length - 1);
+  return result;
 };
 
 var renderTray = function(){
-  
-}
+  $('.tray-section').remove();
+  var total = 0;
+  $.each(WingButton.wingTray, function(index, value){
+    if(value>0){
+      var selectItem = {}
+      var traySection = $('<div class="tray-section">')
+      var article = $('<article>')
+      WingButton.wingMenu.forEach(function(item){
+        if(item.id === index){
+          selectItem = item;
+        };
+      })
+      var itemPrice = $('<b>' + " $" + selectItem.price * value + '</b>');
+      total = total + (selectItem.price * value)
+      var name = $('<b>' + selectItem.name + '</b>');
+      article.append(name);
+      article.append(itemPrice);
+      traySection.append(article);
+      $('#tray').append(traySection)
+    }
+  });
+  var orderString = createOrderString();
+  var traySection = $('<div class="tray-section">')
+  addTotal = $('<br>Total: <b>$'+total+'</b></br>');
+  var form = $('<form action="/guest/order" method="POST">');
+  form.append('<input type="hidden" name="orderString" value="'+orderString+'"/>');
+  // form.append('<input name="authenticity_token" type="hidden" value="'+window._token+ '" />')
+  form.append('<br><input type="submit" id="orderButton" value="Order" />');
+  traySection.append(addTotal);
+  traySection.append(form)
+  $('#tray').append(traySection);
+};
+renderTray();
+
+
 
 //will be called within renderMenuItem to render options
 var renderMenuOption = function(item){

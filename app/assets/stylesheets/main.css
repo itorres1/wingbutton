@@ -7,7 +7,7 @@ body {
 }
 
 div {
-  border: 1px solid;
+  border: 0px solid;
 }
 
 #wrapper {
@@ -21,6 +21,7 @@ div {
 }
 #all-content {
   width: 70%;
+
   margin:0 auto;
   padding:10px;
   padding-bottom:50px;   /* Height of the footer element */
@@ -36,15 +37,20 @@ div {
 
 #restaurant-info {
   width: 60%;
+  float: left;
 }
 
 .menu-item {
   background-color: pink;
   width: 60%;
+  float: left;
+  position: relative;
 }
 .menu-category {
   background-color: red;
   width: 60%;
+  float: left;
+  position: relative;
 }
 
 .item-quantity-input {
@@ -52,7 +58,11 @@ div {
 }
 
 #tray {
+  margin-top: 0px;
+  height: 200px;
   width: 35%;
+  float: right;
+  background-color: lightblue;
 }
 
 
