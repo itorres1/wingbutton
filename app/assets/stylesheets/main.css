@@ -1,9 +1,17 @@
 html,
 body {
-
   margin: 0;
   padding:0;
   height:100%;
+  font-family: Georgia;
+  background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
+  background: -moz-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 div {
@@ -17,7 +25,11 @@ div {
 #header {
   padding:10px;
   height:30px;
-  background:#5ee;
+  background:#fff;
+  color: pink;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Arial;
 }
 #all-content {
   width: 70%;
@@ -32,7 +44,13 @@ div {
   position:absolute;
   bottom:0;
   left:0;
-  background:#ee5;
+  background:#fff;
+  font-size: 20px;
+  font-family: Arial;
+}
+#footer a {
+  color: pink;
+  text-decoration: none;
 }
 
 #restaurant-info {
@@ -65,5 +83,10 @@ div {
   background-color: lightblue;
 }
 
+#find-wings {
+  padding-top: 100px;
+  color: white;
+  font-size: 30px;
+}
 
 
