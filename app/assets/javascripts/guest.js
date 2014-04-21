@@ -32,7 +32,6 @@ $.getJSON(WingButton.currentMenuURL, function( data ) {
 //render function is recursive so it renders meal options
 var renderMenuItem = function(item){
   var menuSection = $('<div>');
-
   var article = $('<article>');
   var name = $('<span>' + item.name + '</span>');
   if(item.price != '0.00'){
@@ -40,7 +39,7 @@ var renderMenuItem = function(item){
     menuSection.attr('class', "menu-item" );
     var input = $('<input type="text" class="item-quantity-input" id="'+item.id+'">')
   }else{
-    menuSection.attr('class', "menu-category" );
+    menuSection.attr('class', "menu-item" );
   };
   var descrip = $('<p>' + item.descrip + '</p>')
   article.append(input);
@@ -48,7 +47,7 @@ var renderMenuItem = function(item){
   article.append(name);
   article.append(price);
   menuSection.append(article);
-  $('#all-content').append(menuSection);
+  $('.menu-items').append(menuSection);
   $('#'+item.id+'').keyup(function() {
     WingButton.wingTray[item.id] = this.value;
     renderTray();

@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding:0;
   height:100%;
-  font-family: Georgia;
+  font-family: Arial;
   background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
   background: -moz-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
@@ -13,62 +13,82 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
-
 div {
-  border: 0px solid;
+  box-sizing: border-box;
+/*  border: 1px solid red;*/
 }
 
-#wrapper {
-  min-height:100%;
-  position:relative;
-}
 #header {
-  padding:10px;
-  height:30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  height:50px;
   background: black;
   color: orange;
   font-weight: bold;
   font-size: 30px;
   font-family: Arial;
+  z-index: 5;
 }
-#all-content {
-  width: 70%;
 
-  margin:0 auto;
-  padding:10px;
-  padding-bottom:50px;   /* Height of the footer element */
+#all-content {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  color: #fcf8ea;
+  margin: 0 auto;
+  top: 50px;
 }
+
+#menu-contents {
+  border: 1px solid black;
+  position: absolute; 
+  background-color: white;
+  color: black;
+  padding: 20px;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
 #footer {
-  width:100%;
+  position:fixed;
   height:50px;
-  position:absolute;
-  bottom:0;
-  left:0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
   background:black;
   font-size: 20px;
   font-family: Arial;
+  text-align: right;
 }
-#footer a {
+a {
   color: orange;
   text-decoration: none;
 }
+
+
 
 #restaurant-info {
   width: 60%;
   float: left;
 }
 
-.menu-item {
-  background-color: pink;
+.menu-items {
+  border: 1px dotted black;
+  background-color: orange;
+  color: black;
   width: 60%;
   float: left;
   position: relative;
+  padding: 10px;
 }
-.menu-category {
-  background-color: red;
-  width: 60%;
-  float: left;
-  position: relative;
+
+.menu-item {
+  padding: 5px;
 }
 
 .item-quantity-input {
@@ -76,11 +96,14 @@ div {
 }
 
 #tray {
-  margin-top: 0px;
-  height: 200px;
+  min-height: 100px;
   width: 35%;
   float: right;
-  background-color: lightblue;
+  background-color: white;
+  color: black;
+  border: 1px dotted black;
+  padding: 10px;
+  margin-right: 20px;
 }
 
 #find-wings {
@@ -90,6 +113,8 @@ div {
 }
 
 
+
+/*This is the front page find wings button*/
 .enter-wings {
   -moz-box-shadow:inset 0px 1px 0px 0px #fed897;
   -webkit-box-shadow:inset 0px 1px 0px 0px #fed897;
@@ -119,7 +144,6 @@ div {
   font-weight:bold;
   font-style:normal;
   height:30px;
-  line-height:30px;
   width:121px;
   text-decoration:none;
   text-align:center;
@@ -134,4 +158,3 @@ div {
   position:relative;
   top:1px;
 }
-/* This button was generated using CSSButtonGenerator.com */

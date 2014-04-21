@@ -8,7 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="wrapper">
     <div id="header">
       Wingbutton
     </div>
@@ -23,14 +22,13 @@
     <div id="footer">
       <footer>
         <% if logged_in? %>
-        <%= link_to("Profile", "/users/#{current_user.id}") %>
-        <%= link_to("Log Out", "/session", method: "delete") %>
+        <%= link_to("Profile", "/users/#{current_user.id}") %> 
+        <%= link_to("Log Out", "/session", method: "delete") %> 
         <% else %>
         <%= link_to("Log In","/login") %>
         <% end %>
       </footer>
     </div>
-  </div>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>

@@ -1,23 +1,23 @@
 
 <div id="find-wings">
-<p>Type in your location to find wings near you!</p>
+  <p>Type in your location to find wings near you!</p>
 
-<form action="/addresses" method="POST">
-  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-  <label>
-    Address:
-    <input type="string" name="addr" />
-  </label>
-  <label>
-    City:
-    <input type="string" name="city" />
-  </label>
-  <label>
-    Zip code:
-    <input type="string" name="zip" />
-  </label>
-  <input class="form_button enter-wings" type="submit" value="Find wings" />
-</form>
+  <form action="/addresses" method="POST">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    <label>
+      Address:
+      <input type="string" name="addr" />
+    </label>
+    <label>
+      City:
+      <input type="string" name="city" />
+    </label>
+    <label>
+      Zip code:
+      <input type="string" name="zip" />
+    </label>
+    <input class="form_button enter-wings" type="submit" value="Find wings" />
+  </form>
 </div>
-      
+
 
