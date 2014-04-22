@@ -50,7 +50,6 @@ div {
   padding: 20px;
   width: 100%;
   top: 0;
-  bottom: 0;
 }
 
 #footer {
@@ -176,13 +175,14 @@ hr {
 
 #map-canvas { 
   border-radius: 5px;
-  min-height: 300px;
+  min-height: 250px;
   width: 35%;
   float: right;
-  border: 1px dotted black;
+  border: 1px solid black;
   padding: 20px;
   margin-right: 20px;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 

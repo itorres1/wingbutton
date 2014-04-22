@@ -93,7 +93,7 @@ var renderTray = function(){
   var form = $('<form action="/guest/order" method="POST">');
   form.append('<input type="hidden" name="orderString" value="'+orderString+'"/>');
   // form.append('<input name="authenticity_token" type="hidden" value="'+window._token+ '" />')
-  form.append('<br><input type="submit" class="enter-wings" id="orderButton" value="Order" />');
+  form.append('<br><input type="submit" class="enter-wings" id="orderButton" value="Order now" />');
   traySection.append(addTotal);
   traySection.append(form)
   $('#tray').append(traySection);
@@ -125,7 +125,7 @@ function codeAddress() {
     } 
   });
 }
-google.maps.event.addDomListener(window, 'load', initialize);
+$(document).ready(function() { initialize() });
 
 //will be called within renderMenuItem to render options
 var renderMenuOption = function(item){
