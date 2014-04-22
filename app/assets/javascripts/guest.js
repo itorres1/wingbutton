@@ -100,7 +100,32 @@ var renderTray = function(){
 };
 renderTray();
 
-
+// Render Google Map
+var geocoder;
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
+    zoom: 15,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  codeAddress();
+}
+function codeAddress() {
+  var address = $('#address').text();
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } 
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
 
 //will be called within renderMenuItem to render options
 var renderMenuOption = function(item){
@@ -116,29 +141,4 @@ var renderMenuOption = function(item){
 };
 
 
-
-
-
 // The tray is composed of menu items and optional sub-items. A single menu item's format is: [menu item id]/[qty],[option id],[option id]... Multiple menu items are joined by a +: [menu item id]/[qty]+[menu item id2]/[qty2] For example: 3270/2+3263/1,3279 Means 2 of menu item 3270 (with no sub options) and 1 of item num 3263 with sub option 3279.
-
-
-// The following code instructs the application to load the Maps API after the page has fully loaded (using window.onload) and write the Maps JavaScript API into a <script> tag within the page. Additionally, we instruct the API to only execute the initialize() function after the API has fully loaded by passing callback=initialize to the Maps API bootstrap:
-// function initialize() {
-//   var mapOptions = {
-//     zoom: 8,
-//     center: new google.maps.LatLng(-34.397, 150.644)
-//   };
-
-//   var map = new google.maps.Map(document.getElementById('map-canvas'),
-//       mapOptions);
-// }
-
-// function loadScript() {
-//   var script = document.createElement('script');
-//   script.type = 'text/javascript';
-//   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-//       'callback=initialize';
-//   document.body.appendChild(script);
-// }
-
-// window.onload = loadScript;

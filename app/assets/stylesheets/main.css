@@ -174,4 +174,21 @@ hr {
     background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
 }
 
-#map-canvas { height: 100% }
+#map-canvas { 
+  border-radius: 5px;
+  min-height: 300px;
+  width: 35%;
+  float: right;
+  border: 1px dotted black;
+  padding: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+

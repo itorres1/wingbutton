@@ -3,7 +3,7 @@
   <div id="restaurant-info">
     <p>
       <%= @details['name'] %>
-      <br><%= @details['addr'] %>
+      <br><span id="address"><%= @details['addr'] %> - <%= @details['city'] %>, <%= @details['state'] %></span>
       <br><%= @details['cs_contact_phone'] %>
     </p>
     <hr>
@@ -17,6 +17,8 @@
     <hr>
     <br />
   </div>
+
+  <div id="map-canvas"></div>
 
   <script>
   WingButton.currentMenuURL = "/guest/menu/<%=@details['restaurant_id']%>";
