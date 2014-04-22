@@ -43,10 +43,10 @@ var renderMenuItem = function(item){
   };
   var descrip = $('<p>' + item.descrip + '</p>')
   article.append(input);
-
   article.append(name);
   article.append(price);
   menuSection.append(article);
+  $('<hr>').appendTo(menuSection);
   $('.menu-items').append(menuSection);
   $('#'+item.id+'').keyup(function() {
     WingButton.wingTray[item.id] = this.value;
@@ -80,7 +80,7 @@ var renderTray = function(){
       })
       var itemPrice = $('<b>' + " $" + selectItem.price * value + '</b>');
       total = total + (selectItem.price * value)
-      var name = $('<b>' + selectItem.name + '</b>');
+      var name = $('<em>' + selectItem.name + '</em>');
       article.append(name);
       article.append(itemPrice);
       traySection.append(article);
@@ -93,7 +93,7 @@ var renderTray = function(){
   var form = $('<form action="/guest/order" method="POST">');
   form.append('<input type="hidden" name="orderString" value="'+orderString+'"/>');
   // form.append('<input name="authenticity_token" type="hidden" value="'+window._token+ '" />')
-  form.append('<br><input type="submit" id="orderButton" value="Order" />');
+  form.append('<br><input type="submit" class="enter-wings" id="orderButton" value="Order" />');
   traySection.append(addTotal);
   traySection.append(form)
   $('#tray').append(traySection);
@@ -120,3 +120,25 @@ var renderMenuOption = function(item){
 
 
 // The tray is composed of menu items and optional sub-items. A single menu item's format is: [menu item id]/[qty],[option id],[option id]... Multiple menu items are joined by a +: [menu item id]/[qty]+[menu item id2]/[qty2] For example: 3270/2+3263/1,3279 Means 2 of menu item 3270 (with no sub options) and 1 of item num 3263 with sub option 3279.
+
+
+// The following code instructs the application to load the Maps API after the page has fully loaded (using window.onload) and write the Maps JavaScript API into a <script> tag within the page. Additionally, we instruct the API to only execute the initialize() function after the API has fully loaded by passing callback=initialize to the Maps API bootstrap:
+// function initialize() {
+//   var mapOptions = {
+//     zoom: 8,
+//     center: new google.maps.LatLng(-34.397, 150.644)
+//   };
+
+//   var map = new google.maps.Map(document.getElementById('map-canvas'),
+//       mapOptions);
+// }
+
+// function loadScript() {
+//   var script = document.createElement('script');
+//   script.type = 'text/javascript';
+//   script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+//       'callback=initialize';
+//   document.body.appendChild(script);
+// }
+
+// window.onload = loadScript;
