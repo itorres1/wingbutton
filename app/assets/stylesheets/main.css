@@ -41,9 +41,6 @@ div {
 }
 
 #menu-contents {
-  border: 1px solid black;
-  position: absolute; 
-  background-color: white;
   color: black;
   padding: 20px;
   width: 100%;
