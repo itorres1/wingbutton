@@ -40,6 +40,8 @@ var renderMenuItem = function(item){
     var input = $('<input type="text" class="item-quantity-input" id="'+item.id+'">')
   }else{
     menuSection.attr('class', "menu-item" );
+    menuSection.css({"font-weight":"bold", "font-size":"18px"});
+
   };
   var descrip = $('<p>' + item.descrip + '</p>')
   article.append(input);

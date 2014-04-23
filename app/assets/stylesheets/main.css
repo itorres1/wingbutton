@@ -7,7 +7,6 @@ body {
   background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
   background: -moz-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://www.itsfordinner.com/media/uploads/recipe/chicken-wings/wings-baked-sauced_jpg_600x400_crop_q85.jpg') no-repeat center center fixed;
-  background-repeat: no-repeat; 
   background-size: cover; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,7 +14,6 @@ body {
 }
 div {
   box-sizing: border-box;
-/*  border: 1px solid red;*/
 }
 
 #header {
