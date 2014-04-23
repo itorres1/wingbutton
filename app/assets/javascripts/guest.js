@@ -1,3 +1,4 @@
+window.WingButton = {};
 //WingButton.fullMenu;
 // WingButton.wings = [];
 WingButton.wingTray = {};
@@ -6,7 +7,8 @@ WingButton.wingOptions = [];
 
 // recursive function adds items to wingMenu list if it's a wing item
 function recursiveAddMenuItems(item) {
-  if ((item.is_orderable === 1) && (item.name.match(/wing/i))) {
+  // WingButton.wingMenu.push(item);
+  if ( (item.is_orderable === 1) && (item.name.match(/wing/i)) ) {
     WingButton.wingMenu.push(item);
   }
   if (item.children) {
