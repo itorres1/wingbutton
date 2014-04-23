@@ -40,11 +40,21 @@ div {
   top: 50px;
 }
 
+.restaurant-list {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  right: 100px;
+  color: black;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
 #menu-contents {
   color: black;
   padding: 20px;
   width: 100%;
-  top: 0;
 }
 
 #footer {

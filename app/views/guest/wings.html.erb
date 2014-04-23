@@ -1,6 +1,7 @@
-<p>The following places near you have wings!</p>
 
-<div class="restaurant_list">
+
+<div class="restaurant-list">
+  <h2>The following places near you have wings!</h2>
   <% @deliveries.each do |key| %>
   <% if key['cu'] && key['cu'].include?("Wings") %>
 
@@ -13,9 +14,14 @@
     <br><b>Will deliver!</b> Estimated delivery time: 
     <%= key['del'] %> minutes. Delivery minimum: 
     $<%= key['mino'] %>
+    <hr>
     <% end %>
     <% end %>
   </p>
 
   <% end %>
+
+  <script>
+  $('#all-content').css("background-color", "white");
+  </script>
 </div>
