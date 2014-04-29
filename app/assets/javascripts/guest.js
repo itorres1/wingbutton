@@ -5,6 +5,14 @@ WingButton.wingTray = {};
 WingButton.wingMenu = [];
 WingButton.wingOptions = [];
 
+// Animation for the header
+$('#header a').mouseenter(function(){
+  $('#header a').css("color", "pink");
+});
+$('#header').mouseleave(function(){
+  $('#header a').css("color", "orange");
+});
+
 // recursive function adds items to wingMenu list if it's a wing item
 function recursiveAddMenuItems(item) {
   // WingButton.wingMenu.push(item);
