@@ -44,7 +44,8 @@ class GuestController < ApplicationController
     card_bill_zip = params[:card_bill_zip] 
     card_bill_phone = params[:card_bill_phone]
 
-    make_ordrin_guest_order(rid, tray, tip, delivery_date, first_name, last_name, addr, city, state, zip, phone, em, card_name, card_number, card_cvc, card_expiry, card_bill_addr, card_bill_city, card_bill_state, card_bill_zip, card_bill_phone)
+    # make_ordrin_guest_order(rid, tray, tip, delivery_date, first_name, last_name, addr, city, state, zip, phone, em, card_name, card_number, card_cvc, card_expiry, card_bill_addr, card_bill_city, card_bill_state, card_bill_zip, card_bill_phone)
+    render :final
   end
 
 end
