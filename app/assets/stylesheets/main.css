@@ -201,7 +201,7 @@ hr {
   width: 58%;
   float: left;
   position: relative;
-  padding: 10px;
+  padding: 20px;
   margin-left: 10px;
   min-height: 300px;
   margin-bottom: 100px;
@@ -213,6 +213,18 @@ hr {
   height: 10px;
 }
 
+#guest-info label {
+  float: left;
+  text-align: right;
+  margin-right: 15px;
+  width: 110px;
+}
+
+#checkout-button {
+  clear: both;
+  float: right;
+  padding: 10px;
+}
 
 
 
