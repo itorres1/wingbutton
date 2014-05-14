@@ -1,9 +1,9 @@
-window.WingButton = {};
-//WingButton.fullMenu;
-// WingButton.wings = [];
-WingButton.wingTray = {};
-WingButton.wingMenu = [];
-WingButton.wingOptions = [];
+// window.WingButton = {};
+// //WingButton.fullMenu;
+// // WingButton.wings = [];
+// WingButton.wingTray = {};
+// WingButton.wingMenu = [];
+// WingButton.wingOptions = [];
 
 // Animation for the header
 $('#header a').mouseenter(function(){
@@ -16,7 +16,7 @@ $('#header').mouseleave(function(){
 // recursive function adds items to wingMenu list if it's a wing item
 function recursiveAddMenuItems(item) {
   // WingButton.wingMenu.push(item);
-  if ( (item.is_orderable === 1) && (item.name.match(/wing/i)) ) {
+  if ( (item.name) && (item.name.match(/wing/i)) ) {
     WingButton.wingMenu.push(item);
   }
   if (item.children) {
