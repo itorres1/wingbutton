@@ -7,11 +7,16 @@
 
 // Animation for the header
 $('#header a').mouseenter(function(){
-  $('#header a').css("color", "pink");
+  $('#header a').css("color", "red");
 });
 $('#header').mouseleave(function(){
   $('#header a').css("color", "orange");
 });
+
+// Animation for forms
+$('input').focus(function(){
+  $(this).css('outline-color', 'orange');
+})
 
 // recursive function adds items to wingMenu list if it's a wing item
 function recursiveAddMenuItems(item) {
